@@ -15,7 +15,7 @@ public class LoginController : MonoBehaviour
         print("login complete");
         print("email is" + email);
         print("password is" + password);
-        AllCanvasController.instance.LoginInComplete();
+        UiCanvasController.instance.LoginInComplete();
 
     }
     // Start is called before the first frame update

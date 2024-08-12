@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 846aa0281f4c6744697ea7ca3e74074a, type: 3}
+  m_Name: TaskListWithScenario
+  m_EditorClassIdentifier: 
+  listOfTasks:
+  - Drill holes on  the wooden partition structure using the Battery Drill
+  - Drill holes in the center of the  rafters using  battery drill.
+  - Fix a piece of timber batten on the wall stud
+  - Position the timber batten at the corect heightwhich is a mninimum of 40 mm from
+    the floor.
+  - Fix wool screws on both sides of the timber batten using a battery drill.
+  - Fix a piece of timber batten on the ceiling stud which will be used for the ceiling
+    light
+  - 'Position the timber batten '
+  - Fix wood screws on both sides of the timber batten using a battery drill
+  - Mount the switch  box on the concrete wall.
+  - apple
+  - banana
+  scenarioName: Scenario1
