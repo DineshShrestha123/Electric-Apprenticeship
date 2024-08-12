@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class InventorySystem : MonoBehaviour
 {
     public List<InventoryData> inventoryData = new List<InventoryData>();
     private Dictionary<string, InventoryItem> dictionaryInventoryItems = new Dictionary<string, InventoryItem>();
-
+    public static InventorySystem instance;
     [Header("InventoryUi")]
     public GameObject parentUI;
 
@@ -19,6 +20,7 @@ public class InventorySystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
         foreach (var item in inventoryData)
         {
 
@@ -29,12 +31,22 @@ public class InventorySystem : MonoBehaviour
             dynamicBtn.transform.GetChild(0).GetComponent<TMP_Text>().text = item.inventoryName;
         }
     }
-
-    public void GrabTheObjectFromUiClick()
+    public XRInteractionManager interactionManager;
+    public XRDirectInteractor directRightInteractor, directLeftInteractor;
+    public void GrabTheObjectFromUiClick(string gameobjectName,bool isRightHand)
     {
-        string  cuurentlyselectedGameObjectName = EventSystem.current.currentSelectedGameObject.name;
 
-        GameObject gameObjToGrab = dictionaryInventoryItems[cuurentlyselectedGameObjectName].inventoryGameObject;
+        GameObject gameObjToGrab = dictionaryInventoryItems[gameobjectName].inventoryGameObject;
+        if (isRightHand)
+        {
+            interactionManager.SelectEnter(directRightInteractor, gameObjToGrab.GetComponent<XRGrabInteractableTwoAttach>());
+
+        }
+        else
+        {
+            interactionManager.SelectEnter(directLeftInteractor, gameObjToGrab.GetComponent<XRGrabInteractableTwoAttach>());
+
+        }
 
     }
     // Update is called once per frame

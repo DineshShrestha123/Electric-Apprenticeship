@@ -31,6 +31,15 @@ public class InventoryUi : MonoBehaviour, IPointerEnterHandler
         if (TryGetXRRayInteractor(eventData.pointerId, out var rayInteractor))
         {
             print("ray interactor gameobject name" + rayInteractor.name);
+            if (rayInteractor.name.Contains("Right"))
+            {
+                InventorySystem.instance.GrabTheObjectFromUiClick(gameObject.name, true);
+            }
+            else
+            {
+                InventorySystem.instance.GrabTheObjectFromUiClick(gameObject.name, false);
+
+            }
             rayInteractor.SendHapticImpulse(5, 2f);
         }
     }
