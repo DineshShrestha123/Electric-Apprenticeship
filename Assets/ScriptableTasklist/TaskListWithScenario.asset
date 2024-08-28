@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: TaskListWithScenario
   m_EditorClassIdentifier: 
   listOfTasks:
-  - Drill holes on  the wooden partition structure using the Battery Drill
-  - Drill holes in the center of the  rafters using  battery drill.
+  - 'Move towards the highlighted area '
+  - Grab the drill from inventory,climb the ladder and drill the first indicated
+    area.
   - Fix a piece of timber batten on the wall stud
   - Position the timber batten at the corect heightwhich is a mninimum of 40 mm from
     the floor.

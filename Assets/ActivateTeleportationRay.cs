@@ -16,17 +16,24 @@ public class ActivateTeleportationRay : MonoBehaviour
     public XRRayInteractor leftRayInteractor;
     public XRRayInteractor rightRayInteractor;
 
-   /* void Update()
+    public static ActivateTeleportationRay instance;
+
+
+    private void Awake()
     {
-        //left interactor is grab select value
-        bool isLeftRayHovering = leftRayInteractor.TryGetHitInfo(out Vector3 leftpos, out Vector3 leftNormal,out int leftNumber,out bool leftValid);
-        leftTeleportation.SetActive(!isLeftRayHovering && leftActivate.action.ReadValue<float>() > 0.1f);
+        instance = this;
+    }
+    /* void Update()
+     {
+         //left interactor is grab select value
+         bool isLeftRayHovering = leftRayInteractor.TryGetHitInfo(out Vector3 leftpos, out Vector3 leftNormal,out int leftNumber,out bool leftValid);
+         leftTeleportation.SetActive(!isLeftRayHovering && leftActivate.action.ReadValue<float>() > 0.1f);
 
-        bool isRightRayHovering = rightRayInteractor.TryGetHitInfo(out Vector3 rightPos, out Vector3 rightNormal, out int rightNumber, out bool rightValid);
+         bool isRightRayHovering = rightRayInteractor.TryGetHitInfo(out Vector3 rightPos, out Vector3 rightNormal, out int rightNumber, out bool rightValid);
 
 
-        rightTeleportation.SetActive(!isRightRayHovering && rightActivate.action.ReadValue<float>() > 0.1f);
-    }*/
+         rightTeleportation.SetActive(!isRightRayHovering && rightActivate.action.ReadValue<float>() > 0.1f);
+     }*/
 
     void Update()
     {

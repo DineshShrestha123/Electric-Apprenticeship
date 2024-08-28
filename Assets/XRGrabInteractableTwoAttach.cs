@@ -7,17 +7,22 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
 {
     public Transform leftAttachTransform;
     public Transform rightAttachTransform;
+    public bool isSelectedBool = false;
+    public bool isLeftHandGrabbing;
+    public bool isRightHandGrabbing;
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
+        isSelectedBool = true;
         if (args.interactorObject.transform.CompareTag("LeftHand"))
         {
+            isLeftHandGrabbing = true;
             ActivateGrabRay.instance.isLeftHandGrabbing = true;
             attachTransform = leftAttachTransform;
         }
         else
         {
             ActivateGrabRay.instance.isRightHandGrabbing = true;
-
+            isRightHandGrabbing = true;
             attachTransform = rightAttachTransform;
 
         }
@@ -26,17 +31,20 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
 
     protected override void OnSelectExited(SelectExitEventArgs args)
     {
+        isSelectedBool = false;
 
         if (args.interactorObject.transform.CompareTag("LeftHand"))
         {
 
             ActivateGrabRay.instance.isLeftHandGrabbing = false;
+            isLeftHandGrabbing = false;
 
             attachTransform = leftAttachTransform;
         }
         else
         {
             ActivateGrabRay.instance.isRightHandGrabbing = false;
+            isRightHandGrabbing = false;
 
             attachTransform = rightAttachTransform;
 
