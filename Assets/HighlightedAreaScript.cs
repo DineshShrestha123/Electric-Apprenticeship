@@ -6,7 +6,7 @@ public class HighlightedAreaScript : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        TaskManagerCount.instance.TaskCompleted();
+        TaskManagerCount.instance.TaskCompleted(1,100);
         gameObject.SetActive(false);
         
     }

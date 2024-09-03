@@ -14,10 +14,10 @@ public class StepsToComplete : MonoBehaviour
     }
     private void OnEnable()
     {
-        foreach (var item in taskWithScenario.listOfTasks)
+        foreach (var item in taskWithScenario.taskList)
         {
           var go =  Instantiate(prefabToInstantiate, content.transform);
-            go.gameObject.transform.GetChild(0).GetComponent<TMP_Text>().text = item;
+            go.gameObject.transform.GetChild(0).GetComponent<TMP_Text>().text = item.TaskName;
         }
     }
 
