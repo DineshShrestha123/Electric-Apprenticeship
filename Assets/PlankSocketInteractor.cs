@@ -13,10 +13,12 @@ public class PlankSocketInteractor : XRSocketInteractor
     {
         
     }
-
+   
 
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
+        TaskManagerCount.instance.TaskCompleted(7, 100);
+
         gameObject.GetComponent<MeshRenderer>().enabled = false;
         gameObject.GetComponent<BoxCollider>().isTrigger = false;
         gameObject.GetComponent<BoxCollider>().enabled = false;

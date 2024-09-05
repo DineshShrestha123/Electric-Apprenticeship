@@ -29,60 +29,59 @@ MonoBehaviour:
   - banana
   scenarioName: Scenario1
   taskList:
-  - TaskName: Move  towards Highlighted area .
+  - TaskName: Toggle menu button on left controller to view inventory.
     TaskDetails: 
-    TaskCompletePercentage: 0
+    TaskCompletePercentage: 1700
     TaskNumber: 1
     isCompleted: 0
     hasDetails: 0
-  - TaskName: 'Press menu button on left controller and open inventory and press
-      again to close '
+  - TaskName: Move towards  highlighted area.
     TaskDetails: 
-    TaskCompletePercentage: 0
+    TaskCompletePercentage: 500
     TaskNumber: 2
     isCompleted: 0
     hasDetails: 0
   - TaskName: Go infront of red indicated marks on pillar and place ladder accordingly
       by clicking on inventory
     TaskDetails: 
-    TaskCompletePercentage: 0
+    TaskCompletePercentage: 100
     TaskNumber: 3
     isCompleted: 0
     hasDetails: 0
   - TaskName: Climb the ladder top(using grab from controller)
     TaskDetails: 
-    TaskCompletePercentage: 0
-    TaskNumber: 2
+    TaskCompletePercentage: 210
+    TaskNumber: 4
     isCompleted: 0
     hasDetails: 0
   - TaskName: Select drill from ladder top and starting drilling all 3 holes at 3
       different pillars.
     TaskDetails: 
     TaskCompletePercentage: 0
-    TaskNumber: 2
+    TaskNumber: 5
     isCompleted: 0
     hasDetails: 0
   - TaskName: Select Distribution Board from inventor and place at holder in hall.
     TaskDetails: 
     TaskCompletePercentage: 0
-    TaskNumber: 2
+    TaskNumber: 6
     isCompleted: 0
     hasDetails: 0
   - TaskName: From inventory grab wooden plank and set at the highlighted area
     TaskDetails: 
     TaskCompletePercentage: 0
-    TaskNumber: 2
+    TaskNumber: 7
     isCompleted: 0
     hasDetails: 0
   - TaskName: 'Drill the nails on left side of the plank '
     TaskDetails: 
     TaskCompletePercentage: 0
-    TaskNumber: 2
+    TaskNumber: 8
     isCompleted: 0
     hasDetails: 0
   - TaskName: From inventory grab mount socket infront of wodden plank
     TaskDetails: 
     TaskCompletePercentage: 0
-    TaskNumber: 2
+    TaskNumber: 9
     isCompleted: 0
     hasDetails: 0

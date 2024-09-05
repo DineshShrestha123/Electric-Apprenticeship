@@ -33,11 +33,18 @@ public class InventorySystem : MonoBehaviour
     }
     public XRInteractionManager interactionManager;
     public XRDirectInteractor directRightInteractor, directLeftInteractor;
+
+    public bool isLadderSelectedFirstTime;
     public void GrabTheObjectFromUiClick(string gameobjectName,bool isRightHand)
     {
         print("gameobject name is" + gameobjectName);
         if (gameobjectName.Equals("Ladder"))
         {
+            if (!isLadderSelectedFirstTime)
+            {
+                isLadderSelectedFirstTime = true;
+                TaskManagerCount.instance.TaskCompleted(3, 100);
+            }
             GameObject ladder = dictionaryInventoryItems[gameobjectName].inventoryGameObject;
             ladder.SetActive(true);
             GameObject cameraoffset = GameObject.Find("Camera Offset");

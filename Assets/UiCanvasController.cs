@@ -36,12 +36,15 @@ public class UiCanvasController : MonoBehaviour
         canvasForLogin.SetActive(true);
 
     }
-
+    bool isTaskcomplete;
     // Update is called once per frame
     void Update()
     {
         if (showButton.action.WasPressedThisFrame())
         {
+            TaskManagerCount.instance.TaskCompleted(1, 100);
+
+           
             canvasForGameScenario.SetActive(!canvasForGameScenario.activeSelf);
             canvasForGameScenario.transform.position = head.position + new Vector3(head.forward.x,0,head.forward.z).normalized * spawnDistance;
 
@@ -76,7 +79,7 @@ public class UiCanvasController : MonoBehaviour
     public void TrainThisScenarioActivateGameScene()
     {
         canvasForIndividualScenario.SetActive(false);
-      //  canvasForGameScenario.SetActive(true);
+        canvasForGameScenario.SetActive(true);
     }
 
  

@@ -32,6 +32,11 @@ public class NailToGoIn : MonoBehaviour
 
                 print("counter drill"+ countToLetDrill);
                  countToLetDrill++;
+               /* if (countToLetDrill == 17) {
+
+                    TaskManagerCount.instance.TaskCompleted(8, 50);
+                }*/
+                TaskManagerCount.instance.TaskCompleted(8, 50);
 
                 // Move the nail slowly along the X-axis
                 transform.position += new Vector3(-movementSpeed, 0, 0);

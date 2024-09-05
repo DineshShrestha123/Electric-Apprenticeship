@@ -41,8 +41,11 @@ public class DrillablePlank : MonoBehaviour
                 MeshFilter meshFilter = GetComponent<MeshFilter>();
 
                 // Assign the new Mesh to the MeshFilter
-                if (currentmeshcount == meshesList.Length) { 
-                   // GetComponent<BoxCollider>().enabled = false;    
+                if (currentmeshcount == meshesList.Length-1) {
+                    // GetComponent<BoxCollider>().enabled = false;
+                    // 
+                    TaskManagerCount.instance.TaskCompleted(5, 35);
+
                 }
                 meshFilter.mesh = meshesList[currentmeshcount];
             }

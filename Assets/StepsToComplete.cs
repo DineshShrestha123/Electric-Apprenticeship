@@ -10,15 +10,15 @@ public class StepsToComplete : MonoBehaviour
     public GameObject prefabToInstantiate,content;
     void Start()
     {
-        
+        foreach (var item in taskWithScenario.taskList)
+        {
+            var go = Instantiate(prefabToInstantiate, content.transform);
+            go.gameObject.transform.GetChild(0).GetComponent<TMP_Text>().text = item.TaskName;
+        }
     }
     private void OnEnable()
     {
-        foreach (var item in taskWithScenario.taskList)
-        {
-          var go =  Instantiate(prefabToInstantiate, content.transform);
-            go.gameObject.transform.GetChild(0).GetComponent<TMP_Text>().text = item.TaskName;
-        }
+      
     }
 
     // Update is called once per frame

@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HighlightedAreaScript : MonoBehaviour
+public class LadderTrigger : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    
+
+    public void LadderGrabbed()
     {
-        TaskManagerCount.instance.TaskCompleted(2,100);
-        gameObject.SetActive(false);
-        
+        TaskManagerCount.instance.TaskCompleted(4, 10);
     }
     // Start is called before the first frame update
     void Start()

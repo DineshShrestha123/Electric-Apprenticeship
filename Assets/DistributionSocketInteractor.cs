@@ -2,13 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HighlightedAreaScript : MonoBehaviour
+public class DistributionSocketInteractor : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    public void DistributionBoardSocketInteraction()
     {
-        TaskManagerCount.instance.TaskCompleted(2,100);
-        gameObject.SetActive(false);
-        
+        TaskManagerCount.instance.TaskCompleted(6, 100);
     }
     // Start is called before the first frame update
     void Start()

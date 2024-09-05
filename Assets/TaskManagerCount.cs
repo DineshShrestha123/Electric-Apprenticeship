@@ -22,8 +22,14 @@ public class TaskManagerCount : MonoBehaviour
 
     public void TaskCompleted(int TaskNumber,float completePercentage)
     {
-        Task task = currentListOfTasks.taskList.FirstOrDefault(task => task.TaskNumber == TaskNumber);
+        print("tasj  number is" + TaskNumber);
 
+       
+        Task task = currentListOfTasks.taskList.FirstOrDefault(task => task.TaskNumber == TaskNumber);
+        if (task == null) {
+
+            print("task is null");
+        }
         task.TaskCompletePercentage += completePercentage;
         if (task.TaskCompletePercentage > 90 || task.TaskCompletePercentage > 100)
         {
