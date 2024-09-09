@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class InventorySystem : MonoBehaviour
@@ -28,7 +29,8 @@ public class InventorySystem : MonoBehaviour
 
             GameObject dynamicBtn =  Instantiate(buttonDyanmicForInstantiation, parentUI.transform);
             dynamicBtn.name = item.inventoryName;
-            dynamicBtn.transform.GetChild(0).GetComponent<TMP_Text>().text = item.inventoryName;
+            dynamicBtn.transform.GetChild(1).GetComponent<TMP_Text>().text = item.inventoryName;
+            dynamicBtn.transform.GetChild(0).GetComponent<Image>().sprite = item.inventoryItemWithData.imageForUi;
         }
     }
     public XRInteractionManager interactionManager;
@@ -87,6 +89,7 @@ public class InventoryData
 public class InventoryItem
 {
     public GameObject inventoryGameObject;
+    public Sprite imageForUi;
 }
 
 
