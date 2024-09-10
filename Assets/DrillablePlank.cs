@@ -18,10 +18,14 @@ public class DrillablePlank : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         indicator.SetActive(false);
-        print("collider enterd");
         isTouchingPlank = true;
 
     }
+
+  
+
+
+   
     private void OnTriggerExit(Collider other)
     {
         isTouchingPlank = false;
@@ -45,7 +49,11 @@ public class DrillablePlank : MonoBehaviour
                     // GetComponent<BoxCollider>().enabled = false;
                     // 
                     TaskManagerCount.instance.TaskCompleted(5, 35);
+                }
 
+                if(currentmeshcount > meshesList.Length - 1)
+                {
+                    return;
                 }
                 meshFilter.mesh = meshesList[currentmeshcount];
             }

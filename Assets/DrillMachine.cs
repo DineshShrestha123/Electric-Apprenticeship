@@ -18,8 +18,8 @@ public class DrillMachine : IventoryObject
     {
         if (isSelectedBool)
         {
-            print("is selected" + isSelectedBool);
-
+/*            print("is selected" + isSelectedBool);
+*/
             if (isLeftHandGrabbing)
             {
                float triggerButtonPressValue =  ActivateTeleportationRay.instance.leftActivate.action.ReadValue<float>();

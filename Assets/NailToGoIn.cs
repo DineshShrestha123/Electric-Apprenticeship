@@ -36,7 +36,7 @@ public class NailToGoIn : MonoBehaviour
 
                     TaskManagerCount.instance.TaskCompleted(8, 50);
                 }*/
-                TaskManagerCount.instance.TaskCompleted(8, 50);
+                TaskManagerCount.instance.TaskCompleted(8, 10);
 
                 // Move the nail slowly along the X-axis
                 transform.position += new Vector3(-movementSpeed, 0, 0);

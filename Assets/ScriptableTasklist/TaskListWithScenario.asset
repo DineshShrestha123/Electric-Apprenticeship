@@ -31,33 +31,33 @@ MonoBehaviour:
   taskList:
   - TaskName: Toggle menu button on left controller to view inventory.
     TaskDetails: 
-    TaskCompletePercentage: 4600
+    TaskCompletePercentage: 0
     TaskNumber: 1
     isCompleted: 0
     hasDetails: 0
   - TaskName: Move towards  highlighted area.
     TaskDetails: 
-    TaskCompletePercentage: 700
+    TaskCompletePercentage: 0
     TaskNumber: 2
     isCompleted: 0
     hasDetails: 0
   - TaskName: Go infront of red indicated marks on pillar and place ladder accordingly
       by clicking on inventory
     TaskDetails: 
-    TaskCompletePercentage: 200
+    TaskCompletePercentage: 0
     TaskNumber: 3
     isCompleted: 0
     hasDetails: 0
   - TaskName: Climb the ladder top(using grab from controller)
     TaskDetails: 
-    TaskCompletePercentage: 460
+    TaskCompletePercentage: 0
     TaskNumber: 4
     isCompleted: 0
     hasDetails: 0
   - TaskName: Select drill from ladder top and starting drilling all 3 holes at 3
       different pillars.
     TaskDetails: 
-    TaskCompletePercentage: 30
+    TaskCompletePercentage: 0
     TaskNumber: 5
     isCompleted: 0
     hasDetails: 0
@@ -69,19 +69,19 @@ MonoBehaviour:
     hasDetails: 0
   - TaskName: From inventory grab wooden plank and set at the highlighted area
     TaskDetails: 
-    TaskCompletePercentage: 100
+    TaskCompletePercentage: 0
     TaskNumber: 7
     isCompleted: 0
     hasDetails: 0
   - TaskName: 'Drill the nails on left side of the plank '
     TaskDetails: 
-    TaskCompletePercentage: 1000
+    TaskCompletePercentage: 0
     TaskNumber: 8
     isCompleted: 0
     hasDetails: 0
   - TaskName: From inventory grab mount socket infront of wodden plank
     TaskDetails: 
-    TaskCompletePercentage: 100
+    TaskCompletePercentage: 0
     TaskNumber: 9
     isCompleted: 0
     hasDetails: 0
