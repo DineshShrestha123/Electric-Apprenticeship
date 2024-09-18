@@ -15,16 +15,26 @@ namespace GogoGaga.OptimizedRopesAndCables
         [Header("Rope Transforms")]
         [Tooltip("The rope will start at this point")]
         [SerializeField] private Transform startPoint;
-        public Transform StartPoint => startPoint;
+        public Transform StartPoint  {
+            get => startPoint;
+            set => startPoint = value;  // Add a setter here
+        }
 
         [Tooltip("This will move at the center hanging from the rope, like a necklace, for example")]
         [SerializeField] private Transform midPoint;
-        public Transform MidPoint => midPoint;
+        public Transform MidPoint {
+            get => midPoint;
+            set => midPoint = value;
+
+        }
 
         [Tooltip("The rope will end at this point")]
         [SerializeField] private Transform endPoint;
-        public Transform EndPoint => endPoint;
-
+        public Transform EndPoint
+        {
+            get => endPoint;
+            set => endPoint = value;  // Add a setter here
+        }
         [Header("Rope Settings")]
         [Tooltip("How many points should the rope have, 2 would be a triangle with straight lines, 100 would be a very flexible rope with many parts")]
         [Range(2, 100)] public int linePoints = 10;

@@ -72,6 +72,28 @@ public class InventorySystem : MonoBehaviour
         }
 
     }
+
+    public void DeSelectObject(GameObject grabInteractable)
+    {
+        print("deselect is called");
+        XRGrabInteractable interactable = grabInteractable.GetComponent<XRGrabInteractable>();
+        if (interactable == null)
+        {
+            Debug.LogError("No XRGrabInteractable component found on the GameObject.");
+            return;
+        }
+
+        // Get the currently selecting interactor
+        XRBaseInteractor interactor = interactable.selectingInteractor;
+        if (interactor == null)
+        {
+            Debug.Log("No interactor is currently selecting this interactable.");
+            return;
+        }
+
+        // Deselect the interactable using the interaction manager
+        interactionManager.SelectExit(interactor, interactable);
+    }
     // Update is called once per frame
 
 }
