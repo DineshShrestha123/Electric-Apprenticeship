@@ -11,6 +11,8 @@ public class WireInstantiationController : MonoBehaviour
 {
     public static WireInstantiationController instance; 
     // Start is called before the first frame update
+
+    //PVc till 
     public List<WireDetailsWithPillar> listOfWireDetailsWithPillar = new List<WireDetailsWithPillar>();
     public Dictionary<int, WireDetailsWithPillar> dictionaryForWireDetailsFromPillar = new Dictionary<int, WireDetailsWithPillar>();
 
@@ -49,6 +51,8 @@ public class WireInstantiationController : MonoBehaviour
         ropeToBegin.StartPoint = ropeToBeginData.ropeStartPoint.transform;
         ropeToBegin.EndPoint = grabInteractable.transform;
         ropeToBegin.gameObject.SetActive(true);
+
+        TaskManagerCount.instance.TaskCompleted(1, 25);
       /*  if (pillarNo == 1)
         {
             WireDetailsWithPillar wireDetails = dictionaryForWireDetailsFromPillar[pillarNo];
@@ -75,6 +79,11 @@ public class WireInstantiationController : MonoBehaviour
           
         }
        */
+
+    }
+
+    public void StartWireInstantiationPVC2Point5(int pillarNo)
+    {
 
     }
 

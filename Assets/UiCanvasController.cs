@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class UiCanvasController : MonoBehaviour
 {
@@ -23,11 +24,21 @@ public class UiCanvasController : MonoBehaviour
     public InputActionProperty showButton;
     public Transform head;
     public float spawnDistance = 10;
+    Scene currentScene;
     void Start()
     {
         instance = this;
-        canvasForLogo.SetActive(true);
-       // canvasForLogin.SetActive(false);
+
+         currentScene = SceneManager.GetActiveScene();
+
+        Debug.Log("Current Scene: " + currentScene.name);
+        if (!currentScene.name.Equals("Scenario1"))
+        {
+            return;
+        }
+
+            canvasForLogo.SetActive(true);
+       
         Invoke(nameof(WaitAndDisablePanel), 8f);
     }
     void WaitAndDisablePanel()
@@ -42,9 +53,13 @@ public class UiCanvasController : MonoBehaviour
     {
         if (showButton.action.WasPressedThisFrame())
         {
-            TaskManagerCount.instance.TaskCompleted(1, 100);
+            if (currentScene.name.Equals("Scenario1"))
+            {
+                TaskManagerCount.instance.TaskCompleted(1, 100);
 
-           
+            }
+
+
             canvasForGameScenario.SetActive(!canvasForGameScenario.activeSelf);
             canvasForGameScenario.transform.position = head.position + new Vector3(head.forward.x,0,head.forward.z).normalized * spawnDistance;
 

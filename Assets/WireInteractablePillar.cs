@@ -13,6 +13,19 @@ public class WireInteractablePillar : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+       /* print("called ontrigger"+other.gameObject.name);
+        if (other.gameObject.name.Equals("PVC25"))
+        {
+            //full till switch
+            WireInstantiationController.instance.StartWireInstantiation(pillarNumber);
+
+
+        }
+        else
+        {
+
+        }*/
+
         WireInstantiationController.instance.StartWireInstantiation(pillarNumber);
 
     }

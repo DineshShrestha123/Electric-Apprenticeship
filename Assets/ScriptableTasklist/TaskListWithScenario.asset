@@ -29,57 +29,59 @@ MonoBehaviour:
   - banana
   scenarioName: Scenario1
   taskList:
-  - TaskName: Toggle menu button on left controller to view inventory.
+  - TaskName: Toggle the menu button on the left controller to view the inventory.
     TaskDetails: 
     TaskCompletePercentage: 0
     TaskNumber: 1
     isCompleted: 0
     hasDetails: 0
-  - TaskName: Move towards  highlighted area.
+  - TaskName: Move towards the highlighted area.
     TaskDetails: 
     TaskCompletePercentage: 0
     TaskNumber: 2
     isCompleted: 0
     hasDetails: 0
-  - TaskName: Go infront of red indicated marks on pillar and place ladder accordingly
-      by clicking on inventory
+  - TaskName: Go in front of the red indicated marks on the pillar and place the
+      ladder accordingly by clicking on the inventory.
     TaskDetails: 
     TaskCompletePercentage: 0
     TaskNumber: 3
     isCompleted: 0
     hasDetails: 0
-  - TaskName: Climb the ladder top(using grab from controller)
+  - TaskName: Climb the ladder using the "grab" function from the controller.
     TaskDetails: 
     TaskCompletePercentage: 0
     TaskNumber: 4
     isCompleted: 0
     hasDetails: 0
-  - TaskName: Select drill from ladder top and starting drilling all 3 holes at 3
-      different pillars.
+  - TaskName: Select the drill from the ladder top and start drilling all three holes
+      at three different pillars.
     TaskDetails: 
     TaskCompletePercentage: 0
     TaskNumber: 5
     isCompleted: 0
     hasDetails: 0
-  - TaskName: Select Distribution Board from inventor and place at holder in hall.
+  - TaskName: 'Select the distribution board from the inventory and place it in the
+      holder in the hall. '
     TaskDetails: 
     TaskCompletePercentage: 0
     TaskNumber: 6
     isCompleted: 0
     hasDetails: 0
-  - TaskName: From inventory grab wooden plank and set at the highlighted area
+  - TaskName: From the inventory, grab the wooden plank and set it at the highlighted
+      area.
     TaskDetails: 
     TaskCompletePercentage: 0
     TaskNumber: 7
     isCompleted: 0
     hasDetails: 0
-  - TaskName: 'Drill the nails on left side of the plank '
+  - TaskName: Drill the nails on the left side of the plank.
     TaskDetails: 
     TaskCompletePercentage: 0
     TaskNumber: 8
     isCompleted: 0
     hasDetails: 0
-  - TaskName: From inventory grab mount socket infront of wodden plank
+  - TaskName: From the inventory, grab the mount socket in front of the wooden plank.
     TaskDetails: 
     TaskCompletePercentage: 0
     TaskNumber: 9

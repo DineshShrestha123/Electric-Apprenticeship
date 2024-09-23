@@ -2,21 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HighlightedAreaScript : MonoBehaviour
+public class InteractionHandler : MonoBehaviour
 {
     public int TaskId;
-    private void OnTriggerEnter(Collider other)
-    {
-        TaskManagerCount.instance.TaskCompleted(TaskId, 100);
-        gameObject.SetActive(false);
-        
-    }
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
+    public void OnTriggerEnter(Collider other)
+    {
+
+        gameObject.SetActive(false);
+    }
     // Update is called once per frame
     void Update()
     {

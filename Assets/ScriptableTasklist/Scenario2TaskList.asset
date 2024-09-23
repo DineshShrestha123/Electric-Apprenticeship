@@ -15,15 +15,22 @@ MonoBehaviour:
   listOfTasks: []
   scenarioName: Scenario2
   taskList:
-  - TaskName: Put 2.5 PVC wire through 3 indicated marks to the highlighted area
+  - TaskName: Put 2.5 PVC wire through 2 indicated marks to middlelog
     TaskDetails: Put wire through 3 indicated marks to the highlighted area
     TaskCompletePercentage: 0
     TaskNumber: 1
     isCompleted: 0
     hasDetails: 0
-  - TaskName: Put 1.5 wire through 2 indicated marks to the highlighted area
+  - TaskName: Go highlightest area ,select wire from inventory and insert wire to
+      middle log from ground
     TaskDetails: Put wire through 3 indicated marks to the highlighted area
     TaskCompletePercentage: 0
-    TaskNumber: 1
+    TaskNumber: 2
+    isCompleted: 0
+    hasDetails: 0
+  - TaskName: Select wire from inventory and insert wire to middle log from ground
+    TaskDetails: Select wire from inventory and insert wire to middle log from ground
+    TaskCompletePercentage: 0
+    TaskNumber: 3
     isCompleted: 0
     hasDetails: 0
