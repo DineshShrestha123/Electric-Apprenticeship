@@ -3,10 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MiddleLog : RopeDetails
+public class LeftMiddleLog : RopeDetails
 {
     // Start is called before the first frame update
-
     [Header("Indicators")]
     public GameObject indicatorToDisable, indicatorToEnable;
 
@@ -36,16 +35,17 @@ public class MiddleLog : RopeDetails
         }
         if (!letTrigger) return;
         letTrigger = false;
-       ropeToEnd.StartPoint = ropeToEndStartPos;
+        ropeToEnd.StartPoint = ropeToEndStartPos;
         ropeToEnd.EndPoint = ropeToEndFinalPos;
         if (ropeToEndMiddlePos != null)
         {
             ropeToEnd.MidPoint = ropeToEndMiddlePos;
         }
-     
+
         ropeStaticFacingDown.SetActive(true);
-        GetComponent<MiddleLog>().enabled = false;
-        GetComponent<MiddleLogSecondTrigger>().EnableComponent(); 
+        GetComponent<LeftMiddleLog>().enabled = false;
+        //enable after 2 seconds coz trigger is immediatley called in other script so wating
+        GetComponent<LeftMiddleLogSecondTrigger>().EnableComponent();
 
         ropeBelowMiddleLog.StartPoint = ropeBelowMiddleStartPos;
         InventorySystem.instance.DeSelectObject(grabInteractable);
@@ -54,7 +54,7 @@ public class MiddleLog : RopeDetails
         //GetComponent<BoxCollider>().enabled = true;
 
         ropeBelowMiddleLog.EndPoint = grabInteractable.transform;
-        highlightedArea.SetActive(true);
+       // highlightedArea.SetActive(true);
         ropeBelowMiddleLog.gameObject.SetActive(true);
     }
 
@@ -62,12 +62,12 @@ public class MiddleLog : RopeDetails
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

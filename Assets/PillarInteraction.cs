@@ -6,45 +6,81 @@ public class PillarInteraction : RopeDetails
 {
 
     [Header("Indicators")]
-    public GameObject indicatorToDisable, indicatorToEnable;
+    public GameObject indicatorToDisable, indicatorToEnable,LeftIndicatorToDisable,LeftIndicatorToEnable;
 
-    bool isRightSideCompleted= false;
+    bool isRightSide = true;
     // Start is called before the first frame update
+
+    
     public void OnTriggerEnter(Collider other)
     {
-        if (other is BoxCollider)
-        {
-            Debug.Log("Touched a BoxCollider: " + other.name);
+       
+
+        if (isRightSide) {
+
+            isRightSide = false;
+            if (indicatorToDisable != null)
+            {
+                indicatorToDisable.SetActive(false);
+            }
+            if (indicatorToEnable != null)
+            {
+                indicatorToEnable.SetActive(true);
+
+            }
+
+            print("trigger is called");
+            ropeToEnd.StartPoint = ropeToEndStartPos;
+            ropeToEnd.EndPoint = ropeToEndFinalPos;
+            if (ropeToEndMiddlePos != null)
+            {
+                ropeToEnd.MidPoint = ropeToEndMiddlePos;
+            }
+
+            ropeToCreateNew.StartPoint = ropeToCreateStartPos;
+            InventorySystem.instance.DeSelectObject(grabInteractable);
+
+            grabInteractable.transform.position = grabInteractablePos.position;
+            grabInteractable.GetComponent<Rigidbody>().isKinematic = true;
+            ropeToCreateNew.EndPoint = grabInteractable.transform;
+
+            ropeToCreateNew.gameObject.SetActive(true);
+
+
+
         }
-        // Check if the collider is a SphereCollider
         else
         {
-            Debug.Log("Touched a capsule: " + other.name);
-        }
-        if (indicatorToDisable != null) {
-            indicatorToDisable.SetActive(false);
-        }
-        if (indicatorToEnable != null) {
-            indicatorToEnable.SetActive(true);
+            if (LeftIndicatorToDisable != null)
+            {
+                LeftIndicatorToDisable.SetActive(false);
+            }
+            if (LeftIndicatorToEnable != null)
+            {
+                LeftIndicatorToEnable.SetActive(true);
+
+            }
+
+            print("trigger is called");
+            ropeLeftToEnd.StartPoint = ropeLeftToEndStartPos;
+            ropeLeftToEnd.EndPoint = ropeLeftToEndFinalPos;
+           /* if (ropeToEndMiddlePos != null)
+            {
+                ropeToEnd.MidPoint = ropeToEndMiddlePos;
+            }*/
+
+            ropeLeftToCreateNew.StartPoint = ropeLeftToCreateStartPos;
+            InventorySystem.instance.DeSelectObject(grabInteractable);
+
+            grabInteractable.transform.position = grabInteractableLeftPos.position;
+            grabInteractable.GetComponent<Rigidbody>().isKinematic = true;
+            ropeLeftToCreateNew.EndPoint = grabInteractable.transform;
+
+            ropeLeftToCreateNew.gameObject.SetActive(true);
 
         }
 
-        print("trigger is called");
-        ropeToEnd.StartPoint = ropeToEndStartPos;
-        ropeToEnd.EndPoint = ropeToEndFinalPos;
-        if (ropeToEndMiddlePos != null)
-        {
-            ropeToEnd.MidPoint = ropeToEndMiddlePos;
-        }
 
-        ropeToCreateNew.StartPoint = ropeToCreateStartPos;
-        InventorySystem.instance.DeSelectObject(grabInteractable);
-
-        grabInteractable.transform.position = grabInteractablePos.position;
-        grabInteractable.GetComponent<Rigidbody>().isKinematic = true;
-        ropeToCreateNew.EndPoint = grabInteractable.transform;
-
-        ropeToCreateNew.gameObject.SetActive(true);
 
     }
 
