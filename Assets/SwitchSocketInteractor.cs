@@ -6,7 +6,8 @@ using GogoGaga.OptimizedRopesAndCables;
 
 public class SwitchSocketInteractor : XRSocketInteractor
 {
-
+    [Header("Indicators")]
+    public GameObject indicatorToDisable, indicatorToEnable;
     public GameObject indicator;
 
     public Rope ropeToEnd;
@@ -17,11 +18,21 @@ public class SwitchSocketInteractor : XRSocketInteractor
     public Rope LeftSideInitialRope;
     public GameObject grabInteractable;
     public Transform leftSideRopeStartPosition;
+
+    public int taskNumber;
+    public int taskCompletePercentage;
     // Start is called before the first frame update
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
-        if (indicator != null) {
-            indicator.SetActive(false);
+        TaskManagerCount.instance.TaskCompleted(taskNumber, taskCompletePercentage);
+
+        if (indicatorToDisable != null)
+        {
+            indicatorToDisable.SetActive(false);
+        }
+        if (indicatorToEnable != null)
+        {
+            indicatorToEnable.SetActive(true);
 
         }
         ropeToEnd.StartPoint = ropeStartPoint;

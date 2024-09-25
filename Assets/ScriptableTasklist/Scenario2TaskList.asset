@@ -15,22 +15,50 @@ MonoBehaviour:
   listOfTasks: []
   scenarioName: Scenario2
   taskList:
-  - TaskName: Put 2.5 PVC wire through 2 indicated marks to middlelog
+  - TaskName: Put 2.5 PVC wire through 3 indicated marks to middlelog
     TaskDetails: Put wire through 3 indicated marks to the highlighted area
-    TaskCompletePercentage: 0
+    TaskCompletePercentage: 165
     TaskNumber: 1
     isCompleted: 0
     hasDetails: 0
-  - TaskName: Go highlightest area ,select wire from inventory and insert wire to
-      middle log from ground
-    TaskDetails: Put wire through 3 indicated marks to the highlighted area
-    TaskCompletePercentage: 0
+  - TaskName: Go highlightest area ,select wire from inventory and insert to middle
+      log highlighted area.
+    TaskDetails: Go highlightest area ,select wire from inventory and insert to middle
+      log highlighted area.
+    TaskCompletePercentage: 150
     TaskNumber: 2
     isCompleted: 0
     hasDetails: 0
-  - TaskName: Select wire from inventory and insert wire to middle log from ground
+  - TaskName: Insert wire through third pillar indicated mark to the switch socket.
+    TaskDetails: Select wire from inventory and insert wire to middle log from ground
+    TaskCompletePercentage: 50
+    TaskNumber: 3
+    isCompleted: 0
+    hasDetails: 0
+  - TaskName: Move to the highlighted area in the left side.
+    TaskDetails: Select wire from inventory and insert wire to middle log from ground
+    TaskCompletePercentage: 100
+    TaskNumber: 4
+    isCompleted: 0
+    hasDetails: 0
+  - TaskName: Insert wire through first two pillars to the middle log in the left
+      side.
+    TaskDetails: Select wire from inventory and insert wire to middle log from ground
+    TaskCompletePercentage: 140
+    TaskNumber: 5
+    isCompleted: 0
+    hasDetails: 0
+  - TaskName: Go to highlighted area on  ground and  insert the cable to the left
+      middle log.
+    TaskDetails: Select wire from inventory and insert wire to middle log from ground
+    TaskCompletePercentage: 100
+    TaskNumber: 6
+    isCompleted: 0
+    hasDetails: 0
+  - TaskName: Insert wire through left  third pillar indicated mark to the switch
+      socket.
     TaskDetails: Select wire from inventory and insert wire to middle log from ground
     TaskCompletePercentage: 0
-    TaskNumber: 3
+    TaskNumber: 7
     isCompleted: 0
     hasDetails: 0

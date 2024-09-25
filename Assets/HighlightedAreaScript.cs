@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class HighlightedAreaScript : MonoBehaviour
 {
-    public int TaskId;
+    public int TaskId,taskCompletePercentage;
     private void OnTriggerEnter(Collider other)
     {
-        TaskManagerCount.instance.TaskCompleted(TaskId, 100);
         gameObject.SetActive(false);
+
+        TaskManagerCount.instance.TaskCompleted(TaskId, taskCompletePercentage);
         
     }
     // Start is called before the first frame update

@@ -18,6 +18,10 @@ public class TaskManagerCount : MonoBehaviour
     void Start()
     {
         instance = this;
+        foreach (var task in currentListOfTasks.taskList) { 
+
+            task.TaskCompletePercentage = 0;
+        }
     }
 
     public void TaskCompleted(int TaskNumber,float completePercentage)

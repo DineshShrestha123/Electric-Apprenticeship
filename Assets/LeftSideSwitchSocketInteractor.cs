@@ -6,7 +6,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class LeftSideSwitchSocketInteractor : XRSocketInteractor
 {
-
+    [Header("Indicators")]
+    public GameObject indicatorToDisable, indicatorToEnable;
     public GameObject indicator;
 
     public Rope ropeToEnd;
@@ -18,11 +19,19 @@ public class LeftSideSwitchSocketInteractor : XRSocketInteractor
     public GameObject grabInteractable;
     public Transform leftSideRopeStartPosition;
     // Start is called before the first frame update
+    [Header("TaskRelated")]
+    public int taskNumber;
+    public int taskCompletePercentage;
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
-        if (indicator != null)
+        TaskManagerCount.instance.TaskCompleted(taskNumber, taskCompletePercentage);
+        if (indicatorToDisable != null)
         {
-            indicator.SetActive(false);
+            indicatorToDisable.SetActive(false);
+        }
+        if (indicatorToEnable != null)
+        {
+            indicatorToEnable.SetActive(true);
 
         }
         ropeToEnd.StartPoint = ropeStartPoint;
@@ -32,7 +41,6 @@ public class LeftSideSwitchSocketInteractor : XRSocketInteractor
 
         // Print "Hello" when an object is selected
         Debug.Log("Hello");
-        TaskManagerCount.instance.TaskCompleted(1, 25);
 
         //LeftSide Related Stuff
         InventorySystem.instance.DeSelectObject(grabInteractable);

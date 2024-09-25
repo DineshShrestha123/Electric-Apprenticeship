@@ -8,8 +8,14 @@ public class LeftMiddleLogSecondTrigger : RopeDetails
     [Header("Indicators")]
     public GameObject indicatorToDisable, indicatorToEnable;
     public bool letTrigger = false;
+
+    [Header("TaskRelated")]
+    public int taskNumber;
+    public int taskCompletePercentage;
     public void OnTriggerEnter(Collider other)
     {
+        TaskManagerCount.instance.TaskCompleted(taskNumber, taskCompletePercentage);
+
         print("trigger is called");
 
         if (indicatorToDisable != null)

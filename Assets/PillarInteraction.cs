@@ -11,13 +11,14 @@ public class PillarInteraction : RopeDetails
     bool isRightSide = true;
     // Start is called before the first frame update
 
-    
+    public int taskNumberForRight, taskCompletePercentageForRight;
+    public int taskNumberForLeft, taskCompletePercentageForLeft;
     public void OnTriggerEnter(Collider other)
     {
        
 
         if (isRightSide) {
-
+            TaskManagerCount.instance.TaskCompleted(taskNumberForRight, taskCompletePercentageForRight);
             isRightSide = false;
             if (indicatorToDisable != null)
             {
@@ -60,6 +61,7 @@ public class PillarInteraction : RopeDetails
                 LeftIndicatorToEnable.SetActive(true);
 
             }
+            TaskManagerCount.instance.TaskCompleted(taskNumberForLeft, taskCompletePercentageForLeft);
 
             print("trigger is called");
             ropeLeftToEnd.StartPoint = ropeLeftToEndStartPos;

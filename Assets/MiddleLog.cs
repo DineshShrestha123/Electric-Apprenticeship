@@ -23,8 +23,13 @@ public class MiddleLog : RopeDetails
     public GameObject highlightedArea;
 
     bool letTrigger = true;
+
+    [Header("TaskRelated")]
+    public int taskNumber;
+    public int taskCompletePercentage;
     public void OnTriggerEnter(Collider other)
     {
+        TaskManagerCount.instance.TaskCompleted(taskNumber, taskCompletePercentage);
         if (indicatorToDisable != null)
         {
             indicatorToDisable.SetActive(false);
