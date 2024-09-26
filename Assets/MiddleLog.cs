@@ -29,6 +29,7 @@ public class MiddleLog : RopeDetails
     public int taskCompletePercentage;
     public void OnTriggerEnter(Collider other)
     {
+        print("middle log trigger");
         TaskManagerCount.instance.TaskCompleted(taskNumber, taskCompletePercentage);
         if (indicatorToDisable != null)
         {
@@ -50,7 +51,7 @@ public class MiddleLog : RopeDetails
      
         ropeStaticFacingDown.SetActive(true);
         GetComponent<MiddleLog>().enabled = false;
-        GetComponent<MiddleLogSecondTrigger>().EnableComponent(); 
+        GetComponent<MiddleLogSecondTrigger>().EnableComponent(indicatorToEnable); 
 
         ropeBelowMiddleLog.StartPoint = ropeBelowMiddleStartPos;
         InventorySystem.instance.DeSelectObject(grabInteractable);

@@ -51,7 +51,7 @@ public class LeftMiddleLog : RopeDetails
         ropeStaticFacingDown.SetActive(true);
         GetComponent<LeftMiddleLog>().enabled = false;
         //enable after 2 seconds coz trigger is immediatley called in other script so wating
-        GetComponent<LeftMiddleLogSecondTrigger>().EnableComponent();
+        GetComponent<LeftMiddleLogSecondTrigger>().EnableComponent(indicatorToEnable);
 
         ropeBelowMiddleLog.StartPoint = ropeBelowMiddleStartPos;
         InventorySystem.instance.DeSelectObject(grabInteractable);

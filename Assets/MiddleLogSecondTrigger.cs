@@ -17,17 +17,19 @@ public class MiddleLogSecondTrigger : RopeDetails
         print("trigger is called");
         TaskManagerCount.instance.TaskCompleted(taskNumber, taskCompletePercentage);
 
-        if (indicatorToDisable != null)
-        {
-            indicatorToDisable.SetActive(false);
-        }
-        if (indicatorToEnable != null)
-        {
-            indicatorToEnable.SetActive(true);
-
-        }
+    
         if (letTrigger)
         {
+
+            if (indicatorToDisable != null)
+            {
+                indicatorToDisable.SetActive(false);
+            }
+            if (indicatorToEnable != null)
+            {
+                indicatorToEnable.SetActive(true);
+
+            }
             ropeToEnd.StartPoint = ropeToEndStartPos;
             ropeToEnd.EndPoint = ropeToEndFinalPos;
             if (ropeToEndMiddlePos != null)
@@ -49,16 +51,17 @@ public class MiddleLogSecondTrigger : RopeDetails
     }
 
 
-    public void EnableComponent()
+    public void EnableComponent(GameObject middleLogBottomIndicator)
     {
-        StartCoroutine(CoroutineEnableComponent());
+        StartCoroutine(CoroutineEnableComponent(middleLogBottomIndicator));
     }
 
-    public IEnumerator CoroutineEnableComponent()
+    public IEnumerator CoroutineEnableComponent(GameObject middleLogBottomIndicator)
     {
 
         yield return new WaitForSeconds(3f);
         letTrigger = true;
+        middleLogBottomIndicator.SetActive(true);
         GetComponent<MiddleLogSecondTrigger>().enabled = true;
 
     }
