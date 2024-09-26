@@ -2,6 +2,7 @@ using GogoGaga.OptimizedRopesAndCables;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class LeftSideSwitchSocketInteractor : XRSocketInteractor
@@ -44,13 +45,15 @@ public class LeftSideSwitchSocketInteractor : XRSocketInteractor
 
         //LeftSide Related Stuff
         InventorySystem.instance.DeSelectObject(grabInteractable);
-    /*    grabInteractable.transform.position = LeftSideGrabInteractablePosition.transform.position;
-        LeftSideHighlightedArea.SetActive(true);
-        LeftSideInitialRope.StartPoint = leftSideRopeStartPosition;
-        LeftSideInitialRope.EndPoint = grabInteractable.transform;
-        LeftSideInitialRope.gameObject.SetActive(true);
-*/
 
+        StartCoroutine(WaitAndChangeScene());
+
+    }
+
+    IEnumerator WaitAndChangeScene()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("Scenario3");
     }
     // Update is called once per frame
     void Update()
