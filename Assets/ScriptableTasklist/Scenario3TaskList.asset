@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 846aa0281f4c6744697ea7ca3e74074a, type: 3}
+  m_Name: Scenario3TaskList
+  m_EditorClassIdentifier: 
+  listOfTasks: []
+  scenarioName: Scenario3
+  taskList:
+  - TaskName: Place ladder infront of red indicated marks infront of first pillar
+      and climb to the top.
+    TaskDetails: Select fire cable from inventory and put  through 3 indicated marks
+      to the first bedroom.
+    TaskCompletePercentage: 0
+    TaskNumber: 1
+    isCompleted: 0
+    hasDetails: 0
+  - TaskName: From ladder top ,select fire cable from inventory and put  through
+      3 indicated marks to the first bedroom.
+    TaskDetails: Select fire cable from inventory and put  through 3 indicated marks
+      to the first bedroom.
+    TaskCompletePercentage: 0
+    TaskNumber: 2
+    isCompleted: 0
+    hasDetails: 0
+  - TaskName: Put the wire through the indicated mark right to the third hole.
+    TaskDetails: Put the wire through the indicated mark right to the third hole.
+    TaskCompletePercentage: 0
+    TaskNumber: 3
+    isCompleted: 0
+    hasDetails: 0
+  - TaskName: Insert wire through the indicated mark from first room to second room
+    TaskDetails: Insert wire through the indicated mark from first room to second
+      room
+    TaskCompletePercentage: 0
+    TaskNumber: 4
+    isCompleted: 0
+    hasDetails: 0

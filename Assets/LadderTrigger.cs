@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class LadderTrigger : MonoBehaviour
 {
-    
 
+    public int taskNumber, taskCompletePercentage;
     public void LadderGrabbed()
     {
-        TaskManagerCount.instance.TaskCompleted(4, 10);
+        TaskManagerCount.instance.TaskCompleted(taskNumber, taskCompletePercentage);
     }
     // Start is called before the first frame update
     void Start()

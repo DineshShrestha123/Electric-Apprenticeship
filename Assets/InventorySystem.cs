@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -40,9 +41,10 @@ public class InventorySystem : MonoBehaviour
     public void GrabTheObjectFromUiClick(string gameobjectName,bool isRightHand)
     {
         print("gameobject name is" + gameobjectName);
+        Scene currentScene = SceneManager.GetActiveScene();
         if (gameobjectName.Equals("Ladder"))
         {
-            if (!isLadderSelectedFirstTime)
+            if (!isLadderSelectedFirstTime && currentScene.Equals("Scenario2"))
             {
                 isLadderSelectedFirstTime = true;
                 TaskManagerCount.instance.TaskCompleted(3, 100);
