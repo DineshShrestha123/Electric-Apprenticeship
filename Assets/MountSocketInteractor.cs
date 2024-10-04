@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MountSocketInteractor : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class MountSocketInteractor : MonoBehaviour
     public void MountSocketInteraction()
     {
         TaskManagerCount.instance.TaskCompleted(9, 100);
+        SceneManager.LoadScene("Scenario2");
     }
     void Start()
     {

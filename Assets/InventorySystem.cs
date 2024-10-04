@@ -42,9 +42,10 @@ public class InventorySystem : MonoBehaviour
     {
         print("gameobject name is" + gameobjectName);
         Scene currentScene = SceneManager.GetActiveScene();
+        print("current scenario name is" + currentScene);
         if (gameobjectName.Equals("Ladder"))
         {
-            if (!isLadderSelectedFirstTime && currentScene.Equals("Scenario2"))
+            if (!isLadderSelectedFirstTime && currentScene.name.Equals("Scenario2") || currentScene.name.Equals("Scenario1"))
             {
                 isLadderSelectedFirstTime = true;
                 TaskManagerCount.instance.TaskCompleted(3, 100);
@@ -62,6 +63,7 @@ public class InventorySystem : MonoBehaviour
 
 
         GameObject gameObjToGrab = dictionaryInventoryItems[gameobjectName].inventoryGameObject;
+        gameObjToGrab.SetActive(true);
         if (isRightHand)
         {
             interactionManager.SelectEnter(directRightInteractor, gameObjToGrab.GetComponent<XRGrabInteractableTwoAttach>());

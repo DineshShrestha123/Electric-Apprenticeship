@@ -60,7 +60,7 @@ public class LeftMiddleLog : RopeDetails
         //GetComponent<BoxCollider>().enabled = true;
 
         ropeBelowMiddleLog.EndPoint = grabInteractable.transform;
-       // highlightedArea.SetActive(true);
+        highlightedArea.SetActive(true);
         ropeBelowMiddleLog.gameObject.SetActive(true);
     }
 

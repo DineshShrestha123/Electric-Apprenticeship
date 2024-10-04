@@ -9,13 +9,22 @@ public class VRCameraAdjuster : MonoBehaviour
     public GameObject cameraOffset; // Reference to the camera offset GameObject
     private bool hasAdjustedOffset = false;
 
-    void Update()
+    private void FixedUpdate()
     {
         if (!hasAdjustedOffset && IsHeadsetWorn())
         {
             AdjustCameraOffset();
             hasAdjustedOffset = true; // Ensure the adjustment only happens once
         }
+    }
+
+    void Update()
+    {
+        /*if (!hasAdjustedOffset && IsHeadsetWorn())
+        {
+            AdjustCameraOffset();
+            hasAdjustedOffset = true; // Ensure the adjustment only happens once
+        }*/
     }
 
     bool IsHeadsetWorn()

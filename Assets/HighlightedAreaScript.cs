@@ -7,6 +7,7 @@ public class HighlightedAreaScript : MonoBehaviour
     public int TaskId,taskCompletePercentage;
     private void OnTriggerEnter(Collider other)
     {
+        print("gameobj name"+gameObject.name);
         gameObject.SetActive(false);
 
         TaskManagerCount.instance.TaskCompleted(TaskId, taskCompletePercentage);
