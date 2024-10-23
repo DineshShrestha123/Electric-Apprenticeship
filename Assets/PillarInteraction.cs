@@ -8,6 +8,9 @@ public class PillarInteraction : RopeDetails
     [Header("Indicators")]
     public GameObject indicatorToDisable, indicatorToEnable,LeftIndicatorToDisable,LeftIndicatorToEnable;
 
+    [Header("HighlightedAreas")]
+    public GameObject highlightedArea;
+    public bool isHightedAreaActiveNeeded;
     bool isRightSide = true;
     // Start is called before the first frame update
 
@@ -15,7 +18,7 @@ public class PillarInteraction : RopeDetails
     public int taskNumberForLeft, taskCompletePercentageForLeft;
     public void OnTriggerEnter(Collider other)
     {
-       
+       print("pillar interaction"+gameObject.name);
 
         if (isRightSide) {
             TaskManagerCount.instance.TaskCompleted(taskNumberForRight, taskCompletePercentageForRight);
@@ -47,7 +50,12 @@ public class PillarInteraction : RopeDetails
 
             ropeToCreateNew.gameObject.SetActive(true);
 
+            //Only for scenario 4
+            if (isHightedAreaActiveNeeded) {
 
+                if(highlightedArea!= null)
+                highlightedArea.SetActive(true);
+            }
 
         }
         else
