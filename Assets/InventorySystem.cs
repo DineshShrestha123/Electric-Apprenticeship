@@ -50,6 +50,12 @@ public class InventorySystem : MonoBehaviour
                 isLadderSelectedFirstTime = true;
                 TaskManagerCount.instance.TaskCompleted(3, 100);
             }
+
+            if (currentScene.name.Equals("Scenario1New"))
+            {
+                TaskManagerCount.instance.TaskCompleted(3, 100);
+
+            }
             GameObject ladder = dictionaryInventoryItems[gameobjectName].inventoryGameObject;
             ladder.SetActive(true);
             GameObject cameraoffset = GameObject.Find("Camera Offset");

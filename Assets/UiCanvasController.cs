@@ -25,6 +25,7 @@ public class UiCanvasController : MonoBehaviour
     public Transform head;
     public float spawnDistance = 10;
     Scene currentScene;
+    public bool LoginSequenceNeeded;
     void Start()
     {
         instance = this;
@@ -32,8 +33,9 @@ public class UiCanvasController : MonoBehaviour
          currentScene = SceneManager.GetActiveScene();
 
         Debug.Log("Current Scene: " + currentScene.name);
-        if (!currentScene.name.Equals("Scenario1"))
+        if (!LoginSequenceNeeded)
         {
+            print("returned");
             return;
         }
 
@@ -53,7 +55,7 @@ public class UiCanvasController : MonoBehaviour
     {
         if (showButton.action.WasPressedThisFrame())
         {
-            if (currentScene.name.Equals("Scenario1"))
+            if (currentScene.name.Equals("Scenario1")|| currentScene.name.Equals("Scenario1New"))
             {
                 TaskManagerCount.instance.TaskCompleted(1, 100);
 
