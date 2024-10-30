@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PillarInteractionToEndTask : RopeDetails
 {
@@ -13,6 +14,7 @@ public class PillarInteractionToEndTask : RopeDetails
 
     public int taskNumberForRight, taskCompletePercentageForRight;
     public int taskNumberForLeft, taskCompletePercentageForLeft;
+    public string sceneName;
     public void OnTriggerEnter(Collider other)
     {
 
@@ -48,7 +50,7 @@ public class PillarInteractionToEndTask : RopeDetails
 
             ropeToCreateNew.gameObject.SetActive(true);
 
-
+            SceneManager.LoadScene(sceneName);
 
         }
       
