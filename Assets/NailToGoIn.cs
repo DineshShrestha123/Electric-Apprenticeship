@@ -7,12 +7,17 @@ public class NailToGoIn : MonoBehaviour
     bool isTouchingPlank;
     public float movementSpeed = 0.01f;  // Speed at which the nail moves along the X-axis
     public float rotationSpeed = 5f;
+    GameObject drillNozzle;
+
+
+    DrillMachine drillMachine;
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
         print("collider enterd in nail");
         isTouchingPlank = true;
-
+        drillNozzle = other.gameObject;
+        drillMachine = drillNozzle.GetComponentInParent<DrillMachine>();
     }
     private void OnTriggerExit(Collider other)
     {
@@ -25,10 +30,16 @@ public class NailToGoIn : MonoBehaviour
     {
         if (isTouchingPlank)
         {
+            if (!drillMachine.isNozzleRotating)
+            {
+                return;
+            }
+
+            
             timer += Time.deltaTime;
             if (timer > 0.5f)
             {
-
+                if (countToLetDrill > 9) { return; }
 
                 print("counter drill"+ countToLetDrill);
                  countToLetDrill++;
@@ -36,7 +47,7 @@ public class NailToGoIn : MonoBehaviour
 
                     TaskManagerCount.instance.TaskCompleted(8, 50);
                 }*/
-                TaskManagerCount.instance.TaskCompleted(8, 10);
+                TaskManagerCount.instance.TaskCompleted(8, 6);
 
                 // Move the nail slowly along the X-axis
                 transform.position += new Vector3(-movementSpeed, 0, 0);

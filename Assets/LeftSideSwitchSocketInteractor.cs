@@ -53,7 +53,7 @@ public class LeftSideSwitchSocketInteractor : XRSocketInteractor
     IEnumerator WaitAndChangeScene()
     {
         yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene("Scenario3");
+        SceneManager.LoadScene("Scenario3New");
     }
     // Update is called once per frame
     void Update()

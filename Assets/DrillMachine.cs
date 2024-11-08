@@ -25,12 +25,13 @@ public class DrillMachine : IventoryObject
                float triggerButtonPressValue =  ActivateTeleportationRay.instance.leftActivate.action.ReadValue<float>();
                 if (triggerButtonPressValue > 0.2f)
                 {
-
+                    AudioController.instance.playDrillAudio(triggerButtonPressValue);
                     DrillNozzle.transform.Rotate(0f, 0f, triggerButtonPressValue * rotationForce);
                     isNozzleRotating = true;
                 }
                 else {
                     isNozzleRotating = false;
+                    AudioController.instance.StopDrillAudio();
                 }
 
             }
@@ -40,6 +41,7 @@ public class DrillMachine : IventoryObject
                 float triggerButtonPressValue = ActivateTeleportationRay.instance.rightActivate.action.ReadValue<float>();
                 if (triggerButtonPressValue > 0.1f)
                 {
+                    AudioController.instance.playDrillAudio(triggerButtonPressValue);
 
                     DrillNozzle.transform.Rotate(0f, 0f, triggerButtonPressValue * rotationForce * Time.deltaTime);
                     isNozzleRotating = true;

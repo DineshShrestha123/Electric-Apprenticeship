@@ -37,44 +37,44 @@ MonoBehaviour:
     TaskNumber: 3
     isCompleted: 0
     hasDetails: 0
-  - TaskName: Adjust the ladder and place wire through the xBar between second and
-      third pillar
+  - TaskName: Adjust the ladder near above highlighted area and grab wire and insert
+      to the indicated mark.
     TaskDetails: Insert wire through the indicated mark from first room to second
       room
     TaskCompletePercentage: 0
     TaskNumber: 4
     isCompleted: 0
     hasDetails: 0
-  - TaskName: Enter wire through top plank below x bar to indicated mark
+  - TaskName: Enter wire through top plank below top wire and put wire to the switch
+      box.
     TaskDetails: Insert wire through the indicated mark from first room to second
       room
     TaskCompletePercentage: 0
     TaskNumber: 5
     isCompleted: 0
     hasDetails: 0
-  - TaskName: Enter wire to the mount socket.
+  - TaskName: Enter wire the new wire to the top bar again .
     TaskDetails: Insert wire through the indicated mark from first room to second
       room
     TaskCompletePercentage: 0
     TaskNumber: 6
     isCompleted: 0
     hasDetails: 0
-  - TaskName: For wiring to second room from mount socket ,grab wire and put it through
-      the  top plank
-    TaskDetails: Insert wire through the indicated mark from first room to second
-      room
+  - TaskName: Above top bar insert wire through the two bars to the next room.
+    TaskDetails: Above top bar insert wire through the two bars to the next room.
     TaskCompletePercentage: 0
     TaskNumber: 7
     isCompleted: 0
     hasDetails: 0
-  - TaskName: Enter through middle bar indicators to the second room.
+  - TaskName: In the next room insert wire to the top bar of second room(See indicated
+      mark).
     TaskDetails: Insert wire through the indicated mark from first room to second
       room
     TaskCompletePercentage: 0
     TaskNumber: 8
     isCompleted: 0
     hasDetails: 0
-  - TaskName: Enter next room enter through top bar and the to mount socket.
+  - TaskName: Insert wire to the socket in the next room
     TaskDetails: Insert wire through the indicated mark from first room to second
       room
     TaskCompletePercentage: 0

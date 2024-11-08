@@ -54,8 +54,8 @@ MonoBehaviour:
     TaskNumber: 4
     isCompleted: 0
     hasDetails: 0
-  - TaskName: Select the drill from the ladder top and start drilling all three holes
-      at three different pillars.
+  - TaskName: Select the drill from the ladder top and drill all three holes at three
+      different pillars.(Make sure drill is rotating)
     TaskDetails: 
     TaskCompletePercentage: 0
     TaskNumber: 5

@@ -22,6 +22,14 @@ public class PillarInteraction : RopeDetails
 
         if (isRightSide) {
             TaskManagerCount.instance.TaskCompleted(taskNumberForRight, taskCompletePercentageForRight);
+            if (TryGetComponent<BoxCollider>(out BoxCollider boxCollider))
+            {
+                // If the BoxCollider is found, disable it
+                boxCollider.enabled = false;
+                Debug.Log("BoxCollider disabled on: " + gameObject.name);
+                Invoke(nameof(EnableBoxColliderAgain), 5f);
+            }
+
             isRightSide = false;
             if (indicatorToDisable != null)
             {
@@ -92,6 +100,12 @@ public class PillarInteraction : RopeDetails
 
 
 
+    }
+
+    public void EnableBoxColliderAgain()
+    {
+        print("box collider enabled again");
+        GetComponent<BoxCollider>().enabled = true;
     }
 
     // Update is called once per frame

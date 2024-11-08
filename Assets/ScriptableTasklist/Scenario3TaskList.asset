@@ -31,7 +31,7 @@ MonoBehaviour:
     TaskNumber: 2
     isCompleted: 0
     hasDetails: 0
-  - TaskName: Put the wire through the indicated mark right to the third hole.
+  - TaskName: Go to the highlighted area,
     TaskDetails: Put the wire through the indicated mark right to the third hole.
     TaskCompletePercentage: 0
     TaskNumber: 3

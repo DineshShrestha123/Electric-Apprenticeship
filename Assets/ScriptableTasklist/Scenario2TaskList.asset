@@ -15,21 +15,24 @@ MonoBehaviour:
   listOfTasks: []
   scenarioName: Scenario2
   taskList:
-  - TaskName: Put 2.5 PVC wire through 3 indicated marks to middlelog
-    TaskDetails: Put wire through 3 indicated marks to the highlighted area
+  - TaskName: Put 2.5 PVC wire through first two pillars than to middle log  indicated
+      marks to middlelog
+    TaskDetails: Put 2.5 PVC wire through first two pillars than to middle log  indicated
+      marks to middlelog
     TaskCompletePercentage: 165
     TaskNumber: 1
     isCompleted: 0
     hasDetails: 0
-  - TaskName: Go highlightest area ,select wire from inventory and insert to middle
-      log highlighted area.
-    TaskDetails: Go highlightest area ,select wire from inventory and insert to middle
-      log highlighted area.
+  - TaskName: Climb to  highlightest area below middle log ,select wire from inventory
+      and insert to middle log indicated area.
+    TaskDetails: Climb to  highlightest area below middle log ,select wire from inventory
+      and insert to middle log indicated area.
     TaskCompletePercentage: 150
     TaskNumber: 2
     isCompleted: 0
     hasDetails: 0
-  - TaskName: Insert wire through third pillar indicated mark to the switch socket.
+  - TaskName: Insert wire through third pillar indicated mark and then to the switch
+      socket to the right.
     TaskDetails: Select wire from inventory and insert wire to middle log from ground
     TaskCompletePercentage: 50
     TaskNumber: 3
@@ -48,9 +51,10 @@ MonoBehaviour:
     TaskNumber: 5
     isCompleted: 0
     hasDetails: 0
-  - TaskName: Go to highlighted area on  ground and  insert the cable to the left
-      middle log.
-    TaskDetails: Select wire from inventory and insert wire to middle log from ground
+  - TaskName: Climb to highlighted area and  select wire from inventory and insert
+      to middle log.
+    TaskDetails: Climb to highlighted area and  select wire from inventory and insert
+      to middle log.
     TaskCompletePercentage: 100
     TaskNumber: 6
     isCompleted: 0

@@ -12,24 +12,29 @@ public class DrillablePlank : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+     
         currentmeshcount = 0;
     }
     bool isTouchingPlank;
     private void OnTriggerEnter(Collider other)
     {
-        indicator.SetActive(false);
         isTouchingPlank = true;
-
+        print("other gameobjectnameis" + other.gameObject.name);
+        drillNozzle = other.gameObject;
+        drillMachine = drillNozzle.GetComponentInParent<DrillMachine>();
     }
 
+
+
+
+    GameObject drillNozzle;
+
+
+    DrillMachine drillMachine;
   
-
-
-   
     private void OnTriggerExit(Collider other)
     {
         isTouchingPlank = false;
-
     }
     float timer;
     // Update is called once per frame
@@ -37,7 +42,12 @@ public class DrillablePlank : MonoBehaviour
     {
         if (isTouchingPlank)
         {
-            timer += Time.deltaTime;
+
+            if (!drillMachine.isNozzleRotating)
+            {
+                return;
+            }
+                timer += Time.deltaTime;
             if(timer > 1)
             {
                 timer = 0;
@@ -49,9 +59,11 @@ public class DrillablePlank : MonoBehaviour
                     // GetComponent<BoxCollider>().enabled = false;
                     // 
                     TaskManagerCount.instance.TaskCompleted(5, 35);
+                    indicator.SetActive(false);
+
                 }
 
-                if(currentmeshcount > meshesList.Length - 1)
+                if (currentmeshcount > meshesList.Length - 1)
                 {
                     return;
                 }

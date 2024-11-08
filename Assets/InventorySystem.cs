@@ -122,6 +122,7 @@ public class InventoryItem
 {
     public GameObject inventoryGameObject;
     public Sprite imageForUi;
+    public bool needDestroyAfterClick;
 }
 
 

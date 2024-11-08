@@ -10,7 +10,7 @@ public class MountSocketInteractor : MonoBehaviour
     public void MountSocketInteraction()
     {
         TaskManagerCount.instance.TaskCompleted(9, 100);
-        SceneManager.LoadScene("Scenario2");
+        SceneManager.LoadScene("Scenario2New");
     }
     void Start()
     {

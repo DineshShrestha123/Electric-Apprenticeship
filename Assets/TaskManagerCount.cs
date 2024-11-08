@@ -21,6 +21,7 @@ public class TaskManagerCount : MonoBehaviour
         foreach (var task in currentListOfTasks.taskList) { 
 
             task.TaskCompletePercentage = 0;
+            task.isCompleted = false;
         }
     }
 
@@ -34,11 +35,14 @@ public class TaskManagerCount : MonoBehaviour
 
             print("task is null");
         }
+        if (task.isCompleted) return;
         task.TaskCompletePercentage += completePercentage;
         print("task complete percentage" + task.TaskCompletePercentage);
         if (task.TaskCompletePercentage > 90 || task.TaskCompletePercentage > 100)
         {
             //tick the complete task in ui 
+            task.isCompleted = true;
+            AudioController.instance.playTaskCompleteAudio();
             int childIndex = TaskNumber - 1;
             taskInstantiatedContentParent.transform.GetChild(childIndex).transform.gameObject.transform.GetChild(1).GetComponent<Toggle>().isOn= true;
         }

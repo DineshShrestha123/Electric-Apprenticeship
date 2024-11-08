@@ -41,7 +41,7 @@ public class UiCanvasController : MonoBehaviour
 
             canvasForLogo.SetActive(true);
        
-        Invoke(nameof(WaitAndDisablePanel), 8f);
+        Invoke(nameof(WaitAndDisablePanel), 2f);
     }
     void WaitAndDisablePanel()
     {
