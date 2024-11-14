@@ -60,7 +60,7 @@ public class InventorySystem : MonoBehaviour
             ladder.SetActive(true);
             GameObject cameraoffset = GameObject.Find("Camera Offset");
            
-            ladder.transform.position = UiCanvasController.instance.head.position + new Vector3(UiCanvasController.instance.head.forward.x, 0, UiCanvasController.instance.head.forward.z).normalized * 3;
+            ladder.transform.position = UiCanvasController.instance.head.position + new Vector3(UiCanvasController.instance.head.forward.x, 0, UiCanvasController.instance.head.forward.z).normalized * 1;
             ladder.transform.LookAt(new Vector3(UiCanvasController.instance.head.position.x, ladder.transform.position.y, UiCanvasController.instance.head.position.z));
             //  ladder.transform.position = cameraoffset.transform.position + cameraoffset.transform.forward* 2;
             ladder.transform.position = new Vector3(ladder.transform.position.x, 0, ladder.transform.position.z);
