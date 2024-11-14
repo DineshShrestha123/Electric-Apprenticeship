@@ -10,17 +10,24 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
     public bool isSelectedBool = false;
     public bool isLeftHandGrabbing;
     public bool isRightHandGrabbing;
+
+    GameObject handRefrence;
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
         isSelectedBool = true;
         if (args.interactorObject.transform.CompareTag("LeftHand"))
         {
+            handRefrence= args.interactorObject.transform.GetChild(0).gameObject;
+            handRefrence.SetActive(false);
             isLeftHandGrabbing = true;
             ActivateGrabRay.instance.isLeftHandGrabbing = true;
             attachTransform = leftAttachTransform;
         }
         else
         {
+            handRefrence = args.interactorObject.transform.GetChild(0).gameObject;
+            handRefrence.SetActive(false);
+
             ActivateGrabRay.instance.isRightHandGrabbing = true;
             isRightHandGrabbing = true;
             attachTransform = rightAttachTransform;
@@ -40,6 +47,8 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
             isLeftHandGrabbing = false;
 
             attachTransform = leftAttachTransform;
+            handRefrence.SetActive(true);
+
         }
         else
         {
@@ -47,6 +56,7 @@ public class XRGrabInteractableTwoAttach : XRGrabInteractable
             isRightHandGrabbing = false;
 
             attachTransform = rightAttachTransform;
+            handRefrence.SetActive(true);
 
         }
 
