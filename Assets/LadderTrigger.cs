@@ -14,6 +14,8 @@ public class LadderTrigger : MonoBehaviour
     private CharacterController characterController;
     public InputActionReference leftJoystickMoveAction;
 
+
+    public int climbValue;
     public void LadderGrabbed()
     {
         if (taskNumber==0)
@@ -29,28 +31,30 @@ public class LadderTrigger : MonoBehaviour
 
     }
     // Start is called before the first frame update
+    //ladder samatyo
     public void DisableMovement()
     {
         Debug.Log("Ladder climbing");
-      //  moveProvider.useGravity = false;
-        moveProvider.enabled = false;
-      
+        climbValue++;
+        print("climb value is" + climbValue);
+     moveProvider.moveSpeed = 0;
+     moveProvider.useGravity = false;
+
     }
 
     public void EnableMovement()
     {
+        climbValue--;
+        print("climb value is" + climbValue);
+
         Debug.Log("Ladder deselected");
-        //   moveProvider.useGravity = true;
-        //  moveProvider.moveSpeed = 1.2f;
+      if(climbValue == 0)
+        {
+            moveProvider.moveSpeed = 1.2f;
+            moveProvider.useGravity = true;
 
-        //  moveProvider.enabled = true;
-        StartCoroutine(ResumeMovementWithDelay());
+        }
 
     }
-    private IEnumerator ResumeMovementWithDelay()
-    {
-        yield return new WaitForSeconds(0.01f); // Small delay to let other scripts finish
-        if (moveProvider != null)
-            moveProvider.enabled = true;
-    }
+   
 }

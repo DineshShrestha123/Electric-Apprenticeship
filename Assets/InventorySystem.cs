@@ -38,8 +38,15 @@ public class InventorySystem : MonoBehaviour
     public XRDirectInteractor directRightInteractor, directLeftInteractor;
 
     public bool isLadderSelectedFirstTime;
+    GameObject currentlySelectedGameObject;
+
     public void GrabTheObjectFromUiClick(string gameobjectName,bool isRightHand)
     {
+        if (currentlySelectedGameObject != null)
+        {
+            DeSelectObject(currentlySelectedGameObject);
+        }
+
         print("gameobject name is" + gameobjectName);
         Scene currentScene = SceneManager.GetActiveScene();
         print("current scenario name is" + currentScene);
@@ -56,20 +63,29 @@ public class InventorySystem : MonoBehaviour
                 TaskManagerCount.instance.TaskCompleted(3, 100);
 
             }
+            
             GameObject ladder = dictionaryInventoryItems[gameobjectName].inventoryGameObject;
             ladder.SetActive(true);
-            GameObject cameraoffset = GameObject.Find("Camera Offset");
-           
-            ladder.transform.position = UiCanvasController.instance.head.position + new Vector3(UiCanvasController.instance.head.forward.x, 0, UiCanvasController.instance.head.forward.z).normalized * 1;
-            ladder.transform.LookAt(new Vector3(UiCanvasController.instance.head.position.x, ladder.transform.position.y, UiCanvasController.instance.head.position.z));
-            //  ladder.transform.position = cameraoffset.transform.position + cameraoffset.transform.forward* 2;
-            ladder.transform.position = new Vector3(ladder.transform.position.x, 0, ladder.transform.position.z);
-            return;
+            
+            int currentLadderClimbvalue = ladder.GetComponentInChildren<LadderTrigger>().climbValue;
+            if (currentLadderClimbvalue == 0)
+            {
+                GameObject cameraoffset = GameObject.Find("Camera Offset");
+
+                ladder.transform.position = UiCanvasController.instance.head.position + new Vector3(UiCanvasController.instance.head.forward.x, 0, UiCanvasController.instance.head.forward.z).normalized * 1;
+                ladder.transform.LookAt(new Vector3(UiCanvasController.instance.head.position.x, ladder.transform.position.y, UiCanvasController.instance.head.position.z));
+                //  ladder.transform.position = cameraoffset.transform.position + cameraoffset.transform.forward* 2;
+                ladder.transform.position = new Vector3(ladder.transform.position.x, 0, ladder.transform.position.z);
+                return;
+            }
+          
         }
 
 
         GameObject gameObjToGrab = dictionaryInventoryItems[gameobjectName].inventoryGameObject;
         gameObjToGrab.SetActive(true);
+        currentlySelectedGameObject = gameObjToGrab;
+
         if (isRightHand)
         {
             interactionManager.SelectEnter(directRightInteractor, gameObjToGrab.GetComponent<XRGrabInteractableTwoAttach>());
